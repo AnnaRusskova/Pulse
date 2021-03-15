@@ -29,6 +29,21 @@
             max-width: 100%;
         }
     }
+    .catalog {
+        .container {
+            max-width: 750px;
+        }
+        // .catalog-item {
+        //     width: 258px;
+        &__content {
+            justify-content: space-around;
+        }
+    }
+    .feed {
+        .container {
+            max-width: 750px;
+        }  
+    }
 }
 
 @media (max-width: 991px) {
@@ -66,7 +81,7 @@
                     padding: 8px;
                 }
                 button {
-                    background-color: green;
+                    background-color: grey;
                     color: transparent;
                     border-radius: 100%;
                     width: 2em;
@@ -75,11 +90,24 @@
                 }
                 .slick-active {
                     button {
-                    background-color: #C70101;
+                    background-color: green;
                     }
                 }      
             }
         }
+    }
+    .catalog {
+        .container {
+            max-width: 630px;
+        }
+        &__tab {
+            width: 188px;
+        }
+    }
+    .feed {
+        .container {
+            max-width: 630px;
+        }  
     }
 }
 
@@ -152,7 +180,31 @@
             }
         }
     }
-    
+    .catalog {
+        &__tab {
+            width: 170px;
+        }
+    }
+    .feed {
+        .container {
+            max-width: 430px;
+        }
+        &__item {
+            display: block;
+            margin-top: 50px;
+            text-align: center;
+        }
+        &__img {
+            display: block;
+            margin: 0 auto;
+        }
+        &__subtitle {
+            margin-top: 10px;
+        }
+        &__text {
+            margin-left: 0;
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -275,6 +327,29 @@
         }
         &__inner {
             max-width: 100%;
+        }
+    }
+    .catalog {
+        padding-top: 20px;
+        padding-bottom: 29px;
+        &__tabs {
+            flex-direction: column;
+            margin-top: 28px;
+        }
+        &__tab {
+            margin-bottom: 10px;
+        }
+        &__content {
+            margin-top: 30px;
+        }
+    }
+    .feed {
+        .container {
+            max-width: 280px;
+        }
+        &__img {
+            width: 150px;
+            height: 150px;
         }
     }
 }

@@ -401,4 +401,25 @@
             }
         }
     }
+    .overlay {
+        .modal {
+            &__close {
+                right: -25px;
+            }
+            width: 260px;
+            .feed-form {
+                input {
+                    width: 191px;
+                    height: 34px;
+                }
+                button {
+                    width: 64%; 
+                }
+            }
+            label.error {
+                display: block;
+                width: 200px;
+            }
+        }
+    }
 }

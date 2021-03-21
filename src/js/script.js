@@ -128,4 +128,42 @@ $(document).ready(function() {
     validateForms('#order form');
 
     $('input[name=phone]').mask("+38 (999) 999-99-99");
+
+    // Отправка инфо из форм
+    $('form').submit(function(e) {
+        e.preventDefault(); /* отмена автоматической перезагрузки страницы по умолчанию */
+        $.ajax({ /* отправка данных на сервер */
+            type: "POST", /* отправка, не получение */
+            url: "mailer/smart.php", /* куда отправляем */
+            data: $(this).serialize() /* данные для отправки в формате для сервера */
+        }).done(function() { /* мы выполнили операцию и теперь : */
+            $(this).find("input").val(""); /* после отправки формы - находим инпуты и их форма обнуляется */
+            $('#consultation, #order').fadeOut(); /* окошко для заполнения форм закрывается */
+            $('.overlay, #thanks').fadeIn('slow'); /* появляется окно благодарности */
+
+            $('form').trigger('reset'); /* говорим, что все формы должны очиститься */
+        });
+        return false;
+    });
+
+    // Smooth scroll and pageup
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
+    });
+    // плавный скролл
+    $(function(){
+        $("a[href^='#up']").click(function(){
+                const _href = $(this).attr("href");
+                $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+                return false;
+        });
+    });
+
+    new WOW().init();/*  подключили WOW-библиотеку */
+
 });

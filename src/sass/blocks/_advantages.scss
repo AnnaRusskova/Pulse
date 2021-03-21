@@ -24,6 +24,17 @@
             width: 70px;
             height: 70px;
         }
+        &_animated {
+            animation: heartbeat 1.5s ease infinite; /* важно указать и имя и время длительнности анимации - без этого работать не будет */
+            // animation-name: heartbeat;
+            // animation-duration: 1.5s;
+            // animation-timing-function: ease;
+            // animation-iteration-count: infinite;
+            &:hover {
+                animation-play-state: paused;
+            }
+
+        }
     }
     &__subtitle {
         margin-top: 35px;
